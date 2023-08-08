@@ -42,7 +42,7 @@ const Navbar = () => {
       </li>
       <li>
         {" "}
-        <Link to="/appointment">Appointment</Link>{" "}
+        <Link to="/menu">Menu</Link>{" "}
       </li>
       <li>
         {" "}
