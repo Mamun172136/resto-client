@@ -46,7 +46,7 @@ const Navbar = () => {
       </li>
       <li>
         {" "}
-        <Link to="/review">Review</Link>{" "}
+        <Link to="/order/salad">Order</Link>{" "}
       </li>
       <li>
         {" "}
@@ -54,7 +54,7 @@ const Navbar = () => {
       </li>
       <li>
         {" "}
-        <Link to="/about">About</Link>{" "}
+        <Link to="/login">Login</Link>{" "}
       </li>
       {/* <li> {user ? <button className='btn btn-ghost' onClick={logout}  >SignOut</button> : <Link to="/login" >Login</Link>}</li> */}
       <li>
