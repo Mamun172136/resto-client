@@ -1,4 +1,5 @@
 import React from "react";
+import FoodCard from "../../../components/FoodCard/FoodCard";
 
 const OrderTab = ({ items }) => {
   return (
