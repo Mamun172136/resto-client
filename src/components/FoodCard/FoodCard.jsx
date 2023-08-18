@@ -1,10 +1,14 @@
 import React from "react";
+import { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
+import useCart from "../../hooks/useCart";
 
 const FoodCard = ({ item }) => {
-  const { name, image, price, recipe } = item;
+  const { name, image, price, recipe, _id } = item;
   const { user } = useContext(AuthContext);
-  // const [, refetch] = useCart();
+  const [, refetch] = useCart();
   const navigate = useNavigate();
   const location = useLocation();
   const handleAddToCart = (item) => {
@@ -27,7 +31,7 @@ const FoodCard = ({ item }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            // refetch(); // refetch cart to update the number of items in the cart
+            refetch(); // refetch cart to update the number of items in the cart
             Swal.fire({
               position: "top-end",
               icon: "success",
@@ -66,7 +70,10 @@ const FoodCard = ({ item }) => {
         </h2>
         <p className="">{recipe}</p>
         <div className="card-actions justify-end flex flex-col items-center">
-          <button className="btn btn-outline bg-slate-900  text-white border-0 border-b-4 my-4">
+          <button
+            onClick={() => handleAddToCart(item)}
+            className="btn btn-outline bg-slate-900  text-white border-0 border-b-4 my-4"
+          >
             Add to Cart
           </button>
         </div>
