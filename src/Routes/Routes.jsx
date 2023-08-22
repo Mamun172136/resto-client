@@ -44,6 +44,10 @@ export const router = createBrowserRouter([
         path: "mycart",
         element: <MyCart></MyCart>,
       },
+      {
+        path: "allusers",
+        element: <MyCart></MyCart>,
+      },
     ],
   },
 ]);
